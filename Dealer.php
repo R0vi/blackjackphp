@@ -3,19 +3,29 @@
 class Dealer implements DealerInterface
 {
     private $deck;
+    public $cards;
+
     function __construct(CardDeck $deck)
     {
         $this->deck = $deck;
     }
-
-    function getCards($amount)
+    
+    function shuffleDeck()
     {
-        $cards = [];
+        $this->cards = $this->deck->getCards();
+        shuffle($this->cards);
+    }
 
-        for($i = 1;$i < $amount; $i++)
+    function giveCard()
+    {
+        if(!isset($this->cards))
         {
-            $cards[] = $this->deck->getRandomCard();
+            $this->shuffleDeck();
         }
-        return $cards;
+        $cardKey = array_keys($this->cards)[0];
+        $chosenCard = $this->cards[$cardKey];
+        unset($this->cards[$cardKey]);
+        return $chosenCard;
+        
     }
 }

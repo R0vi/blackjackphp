@@ -1,11 +1,20 @@
 <?php
 require_once 'DealerInterface.php';
-require_once 'Phantomlord.php';
 require_once 'Dealer.php';
 require_once 'Game.php';
+require_once 'CardDeck.php';
 
-$dealer = new Dealer();
+$deck = new CardDeck();
+$dealer = new Dealer($deck);
 $game = new Game('Blackjack',$dealer);
 
 echo '<pre>';
-var_dump($game->createDeck());
+var_dump($dealer->giveCard());
+var_dump($dealer->cards);
+var_dump($dealer->giveCard());
+var_dump($dealer->giveCard());
+var_dump($dealer->giveCard());
+var_dump($dealer->giveCard());
+var_dump($dealer->giveCard());
+var_dump($dealer->giveCard());
+var_dump($dealer->cards);

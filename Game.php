@@ -18,9 +18,7 @@ class Game
 
     public function createDeck()
     {
-      return $this->dealer->shuffleCards(
-          $this->dealer->getCards()
-      );
+      return $this->dealer->getCards(51);
     }
 
     public function getRandomCard($deck)
