@@ -18,9 +18,13 @@ class Game
         $this->dealer = $dealer;
     }
     
-    function calcCards($player)
+    function calcCards($playerCards)
     {
-        
+        $buffer = 0;
+        for($i=0;$i<count($playerCards);$i++)
+        {
+            $buffer;
+        }
     }
 
 }
