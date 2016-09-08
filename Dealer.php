@@ -16,7 +16,7 @@ class Dealer implements DealerInterface
         shuffle($this->cards);
     }
 
-    function giveCard()
+    function giveCard($player)
     {
         if(!isset($this->cards))
         {
@@ -26,6 +26,5 @@ class Dealer implements DealerInterface
         $chosenCard = $this->cards[$cardKey];
         unset($this->cards[$cardKey]);
         return $chosenCard;
-        
     }
 }

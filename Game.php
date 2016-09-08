@@ -4,34 +4,23 @@ class Game
 {
     private $name;
     private $dealer;
+    public $playerCards;
+    public $dealerCards;
 
     /**
      * Game constructor.
      * @param $name
      * @param Dealer $dealer
      */
-    public function __construct($name, DealerInterface $dealer)
+    function __construct($name, DealerInterface $dealer)
     {
         $this->name = $name;
         $this->dealer = $dealer;
     }
-
-    public function createDeck()
+    
+    function calcCards($player)
     {
-      return $this->dealer->getCards(51);
-    }
-
-    public function getRandomCard($deck)
-    {
-        $card = array_rand($deck);
-        return $card;
-    }
-
-    public function giveCards($deck, $player)
-    {
-        $card = $this->getRandomCard($deck);
-        //check of de kaart al gebruikt is.
-
+        
     }
 
 }

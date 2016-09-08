@@ -9,12 +9,6 @@ $dealer = new Dealer($deck);
 $game = new Game('Blackjack',$dealer);
 
 echo '<pre>';
-var_dump($dealer->giveCard());
-var_dump($dealer->cards);
-var_dump($dealer->giveCard());
-var_dump($dealer->giveCard());
-var_dump($dealer->giveCard());
-var_dump($dealer->giveCard());
-var_dump($dealer->giveCard());
-var_dump($dealer->giveCard());
-var_dump($dealer->cards);
+$playerCard1 = $dealer->giveCard();
+var_dump($playerCard1[0]);
+var_dump($playerCard1[1]);
