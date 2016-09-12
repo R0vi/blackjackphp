@@ -18,9 +18,14 @@ class Game
         $this->dealer = $dealer;
     }
 
-    function giveCard($player)
+    function givePlayerCard()
     {
-        array_push($player, $this->dealer->giveCard());
+        array_push($playerCards, $this->dealer->giveCard());
+    }
+
+    function giveDealerCard()
+    {
+        array_push($dealerCards, $this->dealer->giveCard());
     }
 
     function resetGame()

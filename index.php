@@ -8,12 +8,13 @@ $deck = new CardDeck();
 $dealer = new Dealer($deck);
 $game = new Game('Blackjack',$dealer);
 
-$game->giveCard($game->playerCards);
-$game->giveCard($game->playerCards);
-$game->giveCard($game->dealerCards);
-$game->giveCard($game->dealerCards);
+$game->givePlayerCard();
+$game->givePlayerCard();
+$game->giveDealerCard();
+$game->giveDealerCard();
 
 echo "<pre>";
+var_dump($dealer->giveCard());
 var_dump($game->playerCards);
 var_dump($game->dealerCards);
 echo $game->calcCards($game->playerCards);

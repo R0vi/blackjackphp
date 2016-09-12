@@ -18,7 +18,7 @@ class Dealer implements DealerInterface
 
     function giveCard()
     {
-        if(!isset($this->cards))
+        if(!$this->cards = null)
         {
             $this->shuffleDeck();
         }
