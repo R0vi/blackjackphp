@@ -4,10 +4,12 @@ class Dealer implements DealerInterface
 {
     private $deck;
     public $cards;
+    private $storage;
 
-    function __construct(CardDeck $deck)
+    function __construct(CardDeck $deck, StorageInterface $storage)
     {
         $this->deck = $deck;
+        $this->storage = $storage;
     }
     
     function shuffleDeck()
@@ -16,7 +18,7 @@ class Dealer implements DealerInterface
         shuffle($this->cards);
     }
 
-    function giveCard()
+    function giveCard($key)
     {
         if(!$this->cards = null)
         {
@@ -25,6 +27,11 @@ class Dealer implements DealerInterface
         $cardKey = array_keys($this->cards)[0];
         $chosenCard = $this->cards[$cardKey];
         unset($this->cards[$cardKey]);
-        return $chosenCard;
+
+        $playerCards = $this->storage->get($key, []);
+        array_push($playerCards, $chosenCard);
+        $this->storage->set($key, $playerCards);
     }
+
+    //method deal cards
 }
