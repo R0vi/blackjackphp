@@ -2,7 +2,7 @@
 
 interface DealerInterface
 {
-    function shuffleDeck();
+    public function shuffleDeck();
 
-    function giveCard();
+    public function giveCard($key);
 }

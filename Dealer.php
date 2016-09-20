@@ -6,19 +6,19 @@ class Dealer implements DealerInterface
     public $cards;
     private $storage;
 
-    function __construct(CardDeck $deck, StorageInterface $storage)
+    public function __construct(CardDeck $deck, StorageInterface $storage)
     {
         $this->deck = $deck;
         $this->storage = $storage;
     }
-    
-    function shuffleDeck()
+
+    public function shuffleDeck()
     {
         $this->cards = $this->deck->getCards();
         shuffle($this->cards);
     }
 
-    function giveCard($key)
+    public function giveCard($key)
     {
         if(!$this->cards = null)
         {
