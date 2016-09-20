@@ -8,18 +8,18 @@ require_once 'Storage.php';
 
 $storage = new Storage();
 $deck = new CardDeck();
-$dealer = new Dealer($deck);
+$dealer = new Dealer($deck, $storage);
 $game = new Game('Blackjack',$dealer, $storage);
 
 
-$game->giveDealerCard();
-$game->giveDealerCard();
-$game->givePlayerCard();
-$game->givePlayerCard();
+$dealer->giveCard("player");
+$dealer->giveCard("player");
+$dealer->giveCard("dealer");
+$dealer->giveCard("dealer");
 
 echo "<pre>";
-var_dump($storage->get('playerCards'));
-var_dump($storage->get('dealerCards'));
+var_dump($storage->get('player'));
+var_dump($storage->get('dealer'));
 echo $game->calcCards($storage->get('playerCards'));
 echo "<br>";
 echo $game->calcCards($storage->get('dealerCards'));

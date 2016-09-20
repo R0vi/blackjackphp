@@ -5,8 +5,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CardDeck.php" afterPath="$PROJECT_DIR$/CardDeck.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dealer.php" afterPath="$PROJECT_DIR$/Dealer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DealerInterface.php" afterPath="$PROJECT_DIR$/DealerInterface.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game.php" afterPath="$PROJECT_DIR$/Game.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <ignored path="blackjackphp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+            <state relative-caret-position="440">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -41,18 +41,8 @@
       <file leaf-file-name="Game.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Game.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Storage.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Storage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+            <state relative-caret-position="154">
+              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -68,6 +58,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Storage.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Storage.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="DealerInterface.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DealerInterface.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -78,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dealer.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Dealer.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Dealer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+            <state relative-caret-position="740">
+              <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -91,8 +91,8 @@
       <file leaf-file-name="CardDeck.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CardDeck.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+            <state relative-caret-position="542">
+              <caret line="35" column="56" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -108,11 +108,11 @@
       <list>
         <option value="$PROJECT_DIR$/StorageInterface.php" />
         <option value="$PROJECT_DIR$/Storage.php" />
-        <option value="$PROJECT_DIR$/Dealer.php" />
-        <option value="$PROJECT_DIR$/CardDeck.php" />
         <option value="$PROJECT_DIR$/DealerInterface.php" />
         <option value="$PROJECT_DIR$/Game.php" />
+        <option value="$PROJECT_DIR$/CardDeck.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/Dealer.php" />
       </list>
     </option>
   </component>
@@ -173,6 +173,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -193,8 +195,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -261,11 +261,12 @@
       <workItem from="1474361116582" duration="41000" />
       <workItem from="1474361498813" duration="50000" />
       <workItem from="1474362636574" duration="1190000" />
+      <workItem from="1474366264004" duration="3814000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20237000" />
+    <option name="totallyTimeSpent" value="24051000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -660,14 +661,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dealer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DealerInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -684,34 +677,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Storage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CardDeck.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        <state relative-caret-position="542">
+          <caret line="35" column="56" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        <state relative-caret-position="440">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Storage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dealer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
           <folding />
         </state>
       </provider>

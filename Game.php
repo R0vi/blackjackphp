@@ -5,12 +5,7 @@ class Game
     private $name;
     private $dealer;
     private $storage;
-
-    /**
-     * Game constructor.
-     * @param $name
-     * @param Dealer $dealer
-     */
+    
     public function __construct($name, DealerInterface $dealer, StorageInterface $storage)
     {
         $this->name = $name;

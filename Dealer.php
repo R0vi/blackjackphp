@@ -28,10 +28,13 @@ class Dealer implements DealerInterface
         $chosenCard = $this->cards[$cardKey];
         unset($this->cards[$cardKey]);
 
-        $playerCards = $this->storage->get($key, []);
-        array_push($playerCards, $chosenCard);
-        $this->storage->set($key, $playerCards);
+        $gameCards = $this->storage->get($key, []);
+        array_push($gameCards, $chosenCard);
+        $this->storage->set($key, $gameCards);
     }
 
-    //method deal cards
+    public function resetStorage()
+    {
+        
+    }
 }
