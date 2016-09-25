@@ -12,12 +12,12 @@ class Game
         $this->dealer = $dealer;
         $this->storage = $storage;
     }
-
     
     public function resetGame()
     {
-        $this->storage->set('playerCards', []);
-        $this->storage->set('dealerCards', []);
+        $this->storage->set('player', []);
+        $this->storage->set('dealer', []);
+        $this->storage->set('gamestarted', false);
     }
 
     public function calcCards($player)
@@ -30,4 +30,31 @@ class Game
         return $buffer;
     }
 
+    public function startGame()
+    {
+        if($this->isStarted())
+        {
+            return false;
+        }
+        $this->dealer->giveCard('player');
+        $this->dealer->giveCard('player');
+        $this->dealer->giveCard('dealer');
+        $this->dealer->giveCard('dealer');
+
+        $this->storage->set('gamestarted', true);
+        return true;
+    }
+
+    protected function isStarted()
+    {
+        return $this->storage->get('gamestarted', false);
+    }
+
+    public function yeXD()
+    {
+        if($this->calcCards($this->storage->get('dealer')) < 17)
+        {
+            $this->dealer->giveCard('dealer');
+        }
+    }
 }

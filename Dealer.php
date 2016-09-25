@@ -32,9 +32,4 @@ class Dealer implements DealerInterface
         array_push($gameCards, $chosenCard);
         $this->storage->set($key, $gameCards);
     }
-
-    public function resetStorage()
-    {
-        
-    }
 }
