@@ -18,7 +18,7 @@ if(isset($_POST['giveCard']))
 
 if(isset($_POST['keepCard']))
 {
-    // dealers beurt daarna win check
+    $game->dealerBelowMinimum();
 }
 
 if(isset($_POST['startGame']))

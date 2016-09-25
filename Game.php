@@ -50,9 +50,9 @@ class Game
         return $this->storage->get('gamestarted', false);
     }
 
-    public function yeXD()
+    public function dealerBelowMinimum()
     {
-        if($this->calcCards($this->storage->get('dealer')) < 17)
+        while($this->calcCards($this->storage->get('dealer')) < 17)
         {
             $this->dealer->giveCard('dealer');
         }
