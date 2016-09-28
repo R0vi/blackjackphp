@@ -57,4 +57,10 @@ class Game
             $this->dealer->giveCard('dealer');
         }
     }
+
+    public function choseWinner()
+    {
+        $playerscore = $this->calcCards($this->storage->get('player'));
+        $dealerscore = $this->calcCards($this->storage->get('dealer'));
+    }
 }
