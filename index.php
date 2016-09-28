@@ -19,6 +19,7 @@ if(isset($_POST['giveCard']))
 if(isset($_POST['keepCard']))
 {
     $game->dealerBelowMinimum();
+    echo($game->choseWinner());
 }
 
 if(isset($_POST['startGame']))

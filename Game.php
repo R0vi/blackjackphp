@@ -60,7 +60,44 @@ class Game
 
     public function choseWinner()
     {
-        $playerscore = $this->calcCards($this->storage->get('player'));
-        $dealerscore = $this->calcCards($this->storage->get('dealer'));
+        $playercards = $this->storage->get('player');
+        $dealercards = $this->storage->get('dealer');
+        $playerscore = $this->calcCards($playercards);
+        $dealerscore = $this->calcCards($dealercards);
+
+        if($playerscore < 21)
+        {
+            if($playerscore > $dealerscore)
+            {
+                return 'player wins';
+            }
+            elseif($dealerscore > $playerscore)
+            {
+                return 'dealer wins';
+            }
+            elseif($playerscore == $dealerscore)
+            {
+                return 'draw';
+            }
+        }
+        elseif($playerscore == 21)
+        {
+            if(in_array('ace', $playercards) && in_array(10, $playercards))
+            {
+                return 'player blackjack';
+            }
+            if(in_array('ace', $dealercards) && in_array(10, $dealercards))
+            {
+                return 'dealer blackjack';
+            }
+        }
+        elseif($dealerscore > 21)
+        {
+            return 'player wins';
+        }
+        else
+        {
+            return 'dealer wins';
+        }
     }
 }
