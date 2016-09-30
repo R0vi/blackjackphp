@@ -45,7 +45,7 @@ echo $game->calcCards($storage->get('dealer'));
     <?php
     foreach($storage->get('player') as &$key)
     {
-        echo "<img scr=svgcardimages/.".$key[0].".svg alt=".$key[0]." />";
+        echo "<img src='svgcardimages/{$key[0]}.svg' alt='{$key[0]}' />";
     }
     ?>
 </div>
