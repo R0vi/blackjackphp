@@ -41,6 +41,14 @@ echo "<br>";
 echo $game->calcCards($storage->get('dealer'));
 
 ?>
+<div class="playercards">
+    <?php
+    foreach($storage->get('player') as &$key)
+    {
+        echo '<img scr=cardimages/'.$key[0].'alt='.$key[0];
+    }
+    ?>
+</div>
 <form action="index.php" method="post">
     <input type="submit" name="giveCard" value="Hit">
     <input type="submit" name="keepCard" value="Stand">

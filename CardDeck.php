@@ -4,10 +4,10 @@ class CardDeck
 {
     protected  $allCards = [];
     protected $cardTypes = [
-        'Heart',
-        'Spade',
-        'Club',
-        'Diamond'
+        'heart',
+        'spade',
+        'club',
+        'diamond'
     ];
 
     protected $otherValues = [

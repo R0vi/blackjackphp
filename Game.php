@@ -65,7 +65,7 @@ class Game
         $playerscore = $this->calcCards($playercards);
         $dealerscore = $this->calcCards($dealercards);
 
-        if($playerscore < 21)
+        if($playerscore < 21 && $dealerscore < 21)
         {
             if($playerscore > $dealerscore)
             {
