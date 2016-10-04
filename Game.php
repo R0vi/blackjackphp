@@ -22,10 +22,22 @@ class Game
 
     public function calcCards($player)
     {
+        $cards = $this->storage->get($player);
         $buffer = 0;
-        for($i=0;$i<count($player);$i++)
+        for($i=0;$i<count($cards);$i++)
         {
-            $buffer = $buffer + $player[$i][1];
+            if(strpos($cards[$i][0], 'ace'))
+            {
+                $buffer = $buffer + 11;
+                if($buffer > 21)
+                {
+                    $buffer = $buffer - 10;
+                }
+            }
+            else
+            {
+                $buffer = $buffer + $cards[$i][1];
+            }
         }
         return $buffer;
     }
@@ -52,7 +64,7 @@ class Game
 
     public function dealerBelowMinimum()
     {
-        while($this->calcCards($this->storage->get('dealer')) < 17)
+        while($this->calcCards('dealer') < 17)
         {
             $this->dealer->giveCard('dealer');
         }
@@ -62,8 +74,8 @@ class Game
     {
         $playercards = $this->storage->get('player');
         $dealercards = $this->storage->get('dealer');
-        $playerscore = $this->calcCards($playercards);
-        $dealerscore = $this->calcCards($dealercards);
+        $playerscore = $this->calcCards('player');
+        $dealerscore = $this->calcCards('dealer');
 
         if($playerscore < 21 && $dealerscore < 21)
         {

@@ -36,14 +36,24 @@ if(isset($_POST['resetGame']))
 echo "<pre>";
 var_dump($storage->get('player'));
 var_dump($storage->get('dealer'));
-echo $game->calcCards($storage->get('player'));
+echo $game->calcCards('player');
 echo "<br>";
-echo $game->calcCards($storage->get('dealer'));
+echo $game->calcCards('dealer');
 
 ?>
 <div class="playercards">
+    <p>Player Cards</p>
     <?php
     foreach($storage->get('player') as &$key)
+    {
+        echo "<img src='svgcardimages/{$key[0]}.svg' alt='{$key[0]}' />";
+    }
+    ?>
+</div>
+<div class="dealercards">
+    <p>Dealer Cards</p>
+    <?php
+    foreach($storage->get('dealer') as &$key)
     {
         echo "<img src='svgcardimages/{$key[0]}.svg' alt='{$key[0]}' />";
     }
