@@ -24,19 +24,33 @@ class Game
     {
         $cards = $this->storage->get($player);
         $buffer = 0;
+        $hasAce = false;
+        $plusOne = false;
         for($i=0;$i<count($cards);$i++)
         {
             if(strpos($cards[$i][0], 'ace'))
             {
-                $buffer = $buffer + 11;
-                if($buffer > 21)
-                {
-                    $buffer = $buffer - 10;
-                }
+                $hasAce = true;
             }
-            else
+
+            $buffer = $buffer + $cards[$i][1];
+
+            if($hasAce == true && $buffer < 21 && strpos($cards[$i][0], 'ace'))
             {
-                $buffer = $buffer + $cards[$i][1];
+                echo "xd";
+                $buffer = $buffer + 1;
+                $plusOne = true;
+            }
+
+            if($hasAce == true && $buffer > 21 && $plusOne == true)
+            {
+                echo "Kappa";
+                $buffer = $buffer - 10;
+            }
+            elseif ($hasAce == true && $buffer > 21 && $plusOne == false)
+            {
+                echo "Cx";
+                $buffer = $buffer - 9;
             }
         }
         return $buffer;
