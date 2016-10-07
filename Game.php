@@ -37,19 +37,16 @@ class Game
 
             if($hasAce == true && $buffer < 21 && strpos($cards[$i][0], 'ace'))
             {
-                echo "xd";
                 $buffer = $buffer + 1;
                 $plusOne = true;
             }
 
             if($hasAce == true && $buffer > 21 && $plusOne == true)
             {
-                echo "Kappa";
                 $buffer = $buffer - 10;
             }
             elseif ($hasAce == true && $buffer > 21 && $plusOne == false)
             {
-                echo "Cx";
                 $buffer = $buffer - 9;
             }
         }
@@ -90,6 +87,11 @@ class Game
         $dealercards = $this->storage->get('dealer');
         $playerscore = $this->calcCards('player');
         $dealerscore = $this->calcCards('dealer');
+        $playerace = false;
+        $dealerace = false;
+        $playerten = false;
+        $dealerten = false;
+
 
         if($playerscore < 21 && $dealerscore < 21)
         {
@@ -106,13 +108,41 @@ class Game
                 return 'draw';
             }
         }
-        elseif($playerscore == 21)
+        elseif($playerscore == 21 || $dealerscore == 21)
         {
-            if(in_array('ace', $playercards) && in_array(10, $playercards))
+            for($i=0;$i<count($playercards);$i++)
+            {
+                if(strpos($playercards[$i][0], 'ace'))
+                {
+                    $playerace = true;
+                }
+            }
+            for($i=0;$i<count($playercards);$i++)
+            {
+                if($playercards[$i][1] == 10)
+                {
+                    $playerten = true;
+                }
+            }
+            if($playerace == true && $playerten == true)
             {
                 return 'player blackjack';
             }
-            if(in_array('ace', $dealercards) && in_array(10, $dealercards))
+            for($i=0;$i<count($dealercards);$i++)
+            {
+                if(strpos($dealercards[$i][0], 'ace'))
+                {
+                    $dealerace = true;
+                }
+            }
+            for($i=0;$i<count($dealercards);$i++)
+            {
+                if($dealercards[$i][1] == 10)
+                {
+                    $dealerten = true;
+                }
+            }
+            if($dealerace == true && $dealerten == true)
             {
                 return 'dealer blackjack';
             }
