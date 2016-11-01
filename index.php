@@ -14,6 +14,10 @@ $game = new Game('Blackjack',$dealer, $storage);
 if(isset($_POST['giveCard']))
 {
     $dealer->giveCard('player');
+    if($game->calcCards('player') > 21)
+    {
+        echo($game->choseWinner());
+    }
 }
 
 if(isset($_POST['keepCard']))
@@ -53,17 +57,12 @@ if(isset($_POST['resetGame']))
 <div id="menu" class="container">
     <ul>
         <li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
-        <li><a href="#" accesskey="1" title="">Services</a></li>
-        <li><a href="#" accesskey="2" title="">Our Clients</a></li>
-        <li><a href="#" accesskey="3" title="">About Us</a></li>
-        <li><a href="#" accesskey="4" title="">Careers</a></li>
-        <li><a href="#" accesskey="5" title="">Contact Us</a></li>
     </ul>
 </div>
 
 <div id="banner" class="container">
     <div class="dealercards" style="">
-        <p>Dealer cards</p>
+        <div id="logo"><h1>Dealer cards <span> Total: <?php echo $game->calcCards('dealer') ?></span></h1></div>
         <?php
         foreach($storage->get('dealer') as &$key)
         {
@@ -72,7 +71,7 @@ if(isset($_POST['resetGame']))
         ?>
     </div>
     <div class="playercards">
-        <p>Player cards</p>
+        <div id="logo"><h1>Player cards <span> Total: <?php echo $game->calcCards('player') ?></span></h1></div>
         <?php
         foreach($storage->get('player') as &$key)
         {
@@ -82,10 +81,10 @@ if(isset($_POST['resetGame']))
     </div>
 
     <form action="index.php" method="post">
-        <input type="submit" name="giveCard" value="Hit">
-        <input type="submit" name="keepCard" value="Stand">
-        <input type="submit" name="startGame" value="start game">
-        <input type="submit" name="resetGame" value="reset game">
+        <input class="button" type="submit" name="giveCard" value="Hit">
+        <input class="button" type="submit" name="keepCard" value="Stand">
+        <input class="button" type="submit" name="startGame" value="start game">
+        <input class="button" type="submit" name="resetGame" value="reset game">
     </form>
 </div>
 <div id="three-column" class="container">

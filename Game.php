@@ -147,13 +147,13 @@ class Game
                 return 'dealer blackjack';
             }
         }
-        elseif($dealerscore > 21)
+        elseif($playerscore > 21)
         {
-            return 'player wins';
+            return 'dealer wins';
         }
         else
         {
-            return 'dealer wins';
+            return 'player wins';
         }
     }
 }
